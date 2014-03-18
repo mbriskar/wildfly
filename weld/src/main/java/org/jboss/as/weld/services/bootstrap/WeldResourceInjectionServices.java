@@ -174,7 +174,7 @@ public class WeldResourceInjectionServices extends AbstractResourceInjectionServ
         try {
             return context.lookup(name);
         } catch (NamingException e) {
-            throw WeldMessages.MESSAGES.coundNotFindResource(name, e);
+            throw WeldMessages.MESSAGES.coundNotFindResource(name,injectionPoint.getMember().getName(), injectionPoint.getMember().getDeclaringClass().getName(), e);
         }
     }
 
